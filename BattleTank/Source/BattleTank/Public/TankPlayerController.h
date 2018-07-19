@@ -30,6 +30,11 @@ protected:
 private:
 	void AimTowardsCrosshair();
 
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -44,5 +49,4 @@ private:
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
-	
 };
